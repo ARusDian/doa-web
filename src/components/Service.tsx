@@ -1,13 +1,15 @@
 import React from 'react'
 
+
+
 function Service() {
   const services = [
-      {id:1, title: 'Belajar Hijaiyah', desription:'Huruf hijaiyah merupakan huruf penyusun kata dalam Al-Quran. Huruf hijaiyah digunakan untuk menuliskan bahasa arab.', 
-    image:'/src/assets/card1.png'},
+      {id:1, title: 'Al-Quran', desription:'Al-Quran diturunkan untuk menjadi pegangan bagi mereka yang ingin mencapai kebahagian dunia dan akhirat', 
+    image:'/assets/card1.png'},
       {id:2, title: 'Juz-Amma', desription:'Juz Amma adalah sebutan untuk bagian terakhir dari Al-Quran, yang terdiri dari Juz 30. Juz ini terkenal karena berisi surat-surat pendek yang sering digunakan dalam ibadah sehari-hari.', 
-      image:'/src/assets/card2.png'},
+      image:'/assets/card2.png'},
       {id:3, title: 'Kumpulan Doa', desription:'Berisikan Sekumpulan Doa-doa didalam Al- Quran, yang berguna untuk kehidupan sehari-hari umat islam', 
-      image:'/src/assets/card3.png'},
+      image:'/assets/card3.png'},
   ]
   return (
     
