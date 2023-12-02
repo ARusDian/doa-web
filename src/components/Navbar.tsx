@@ -44,7 +44,7 @@ function Navbar() {
             <a ><span className='text-2xl font-bold  text-brandPrimary'>DOA & JUZ AMMA</span></a>
 
             {/* nav web */}
-            <ul className='md:flex space-x-12'>
+            <ul className='md:flex space-x-12 hidden'>
               {
                 navItems.map(({link, path}) => <Link to={path} spy={true} smooth={true} offset={-100} key={path} className='block text-base text-grey900 hover:text-brandPrimary first:font-medium' > {link} </Link>)
               }
