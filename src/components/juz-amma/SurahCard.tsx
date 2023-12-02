@@ -7,11 +7,14 @@ interface SurahCardProps {
 
 export default function SurahCard({
     surah,
-    onClick = () => { }
 }: SurahCardProps
 ) {
     return (
-        <div onClick={onClick} className="flex gap-4 bg-stone-200 rounded-lg shadow-xl p-2 hover:shadow-sm opacity-90">
+        <div onClick={
+            () => {
+                window.location.href = `/juz-amma/${surah.id}`;
+            }
+        } className="flex gap-4 bg-stone-200 rounded-lg shadow-xl p-2 hover:shadow-sm opacity-90">
             <div className="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                     <g clip-path="url(#clip0_141_977)">
@@ -30,7 +33,7 @@ export default function SurahCard({
                     <h1 className="text-lg font-semibold">{surah.name_complex}</h1>
                     <div className="flex gap-3 text-[#8789A3]">
                         <p className="text-xs">{surah.revelation_place.toUpperCase()}</p>
-                        <p className="text-xs">{surah.verses_count} Verses</p>
+                        <p className="text-xs">{surah.verses_count} Ayat</p>
                     </div>
                 </div>
                 <div>

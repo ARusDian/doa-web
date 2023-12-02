@@ -23,7 +23,7 @@ export default function AyahCard({ ayat }: AyahCardProps) {
     }, [])
 
     return (
-        <div className="bg-[#FFF] my-3">
+        <div className="bg-[#FFF] my-3 rounded-lg">
             <div className="h-12 bg-stone-200 text-sm flex justify-between p-2 rounded-md">
                 <p className="my-auto">
                     {ayat.nomorAyat}
