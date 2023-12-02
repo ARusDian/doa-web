@@ -25,7 +25,7 @@ export default function JuzAmma() {
     const [ayah, setAyah] = useState<Ayat[]>([]);
 
     useEffect(() => {
-        fetch('https://equran.id/api/v2/surat/78')
+        fetch('https://equran.id/api/v2/surat/114')
             .then(response => response.json())
             .then(data => {
                 setAyah(data.data.ayat)
@@ -64,10 +64,12 @@ export default function JuzAmma() {
                         </svg>
                     </div>
                 </div>
-                <div className="max-w-7xl mx-auto">
-                    {ayah.map((ayat, index) => (
-                        <AyahCard key={index} ayat={ayat} />
-                    ))}
+                <div className="flex justify-center">
+                    <div className="max-w-7xl w-full">
+                        {ayah.map((ayat, index) => (
+                            <AyahCard key={index} ayat={ayat} />
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>

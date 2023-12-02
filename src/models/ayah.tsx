@@ -27,8 +27,6 @@ export interface Ayat {
     teksArab: string;
     teksLatin: string;
     teksIndonesia: string;
-    audio: Array<{
-        "string" : string;
-    }>;
+    audio: Record<string, string>;
     
 }
