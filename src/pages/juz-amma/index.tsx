@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import SurahCard from "../../components/SurahCard";
+import SurahCard from "../../components/juz-amma/SurahCard";
 import { Surah } from "../../models/surah";
 
 export default function JuzAmma() {
@@ -8,11 +8,10 @@ export default function JuzAmma() {
     useEffect(() => {
         fetch('https://api.quran.com/api/v4/chapters?language=id')
             .then(response => response.json())
-            .then(data => setSurahDataState(data.chapters.slice(77,114)))
+            .then(data => setSurahDataState(data.chapters.slice(77, 114)))
     }
         , []);
-    
-    console.log(surahDataState);
+
     return (
         <div className="bg-neutralWhite min-h-screen min-w-full">
             <div className="p-24 flex flex-col gap-5">
@@ -40,18 +39,16 @@ export default function JuzAmma() {
                     </div>
                 </div>
                 <div
-                    className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-8"
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-4 mt-8"
                 >
                     {surahDataState.map((surah, i) => (
-                            <SurahCard
+                        <SurahCard
                             key={i}
-                                surah={surah}
-                                index={i + 1}
-                                onClick={() => {
-
-                                }}
-                            />
-                        ))}
+                            surah={surah}
+                            onClick={() => {
+                            }}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

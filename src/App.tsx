@@ -1,7 +1,6 @@
-
-import './App.css'
-import Home from './pages/Home'
-import JuzAmma from './pages/juz-amma'
+import Home from './pages/Home';
+import JuzAmma from './pages/juz-amma';
+import DetailSurah from './pages/juz-amma/detail';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -11,6 +10,7 @@ const BrowserRouter = createBrowserRouter(
   [
     { path: "/", element: <Home /> },
     { path: "/juz-amma", element: <JuzAmma /> },
+    { path: "/juz-amma/:id", element: <DetailSurah /> },
   ],
 );
 
