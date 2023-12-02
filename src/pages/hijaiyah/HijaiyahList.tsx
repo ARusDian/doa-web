@@ -6,12 +6,18 @@ const HijaiyahList = () => {
   const doas = [
     {
       number: 1,
-      title: 'Doa Sebelum Makan',
-      arabicContent: 'اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ',
-      translation: 'Artinya: Dengan menyebut nama Allah yang Maha Pemurah lagi Maha Penyayang.',
-      latinScript: "Latin: Allahumma baarik lanaa fiimaa rozaqtanaa wa qinaa 'adzaa bannar",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'}
-    // ... your data here
+      title: 'Alif',
+      arabicContent: 'ا',
+      latinScript: "aa",
+      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+    },
+    {
+      number: 2,
+      title: 'Ba',
+      arabicContent: 'ب',
+      latinScript: "ba",
+      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+    }
   ];
 
   return (
