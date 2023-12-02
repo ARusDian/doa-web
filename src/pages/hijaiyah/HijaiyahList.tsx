@@ -62,128 +62,116 @@ const HijaiyahList = () => {
       number: 10,
       arabicContent: 'ر',
       latinScript: "r",
-      audioSrc: '/assets/audiodoa/r.mp3'
+      audioSrc: '/assets/audiohijaiyah/r.mp3'
     },
     {
       number: 11,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ز',
+      latinScript: "z",
+      audioSrc: '/assets/audiohijaiyah/z.mp3'
     },
     {
       number: 12,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'س',
+      latinScript: "s",
+      audioSrc: '/assets/audiohijaiyah/s.mp3'
     },
     {
       number: 13,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ش',
+      latinScript: "sh",
+      audioSrc: '/assets/audiohijaiyah/sh.mp3'
     },
     {
       number: 14,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ص',
+      latinScript: "S",
+      audioSrc: '/assets/audiohijaiyah/S.mp3'
     },
     {
       number: 15,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ض',
+      latinScript: "D",
+      audioSrc: '/assets/audiohijaiyah/D.mp3'
     },
     {
       number: 16,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ط',
+      latinScript: "T",
+      audioSrc: '/assets/audiohijaiyah/T.mp3'
     },
     {
       number: 17,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ظ',
+      latinScript: "DH",
+      audioSrc: '/assets/audiohijaiyah/DH.mp3'
     },
     {
       number: 18,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ع',
+      latinScript: "3",
+      audioSrc: '/assets/audiohijaiyah/3.mp3'
     },
     {
       number: 19,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'غ',
+      latinScript: "gh",
+      audioSrc: '/assets/audiohijaiyah/gh.mp3'
     },
     {
       number: 20,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ف',
+      latinScript: "f",
+      audioSrc: '/assets/audiohijaiyah/f.mp3'
     },
     {
       number: 21,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 22,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 23,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 24,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 25,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 26,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 27,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
-    },{
-      number: 28,
-      title: 'Tsa',
-      arabicContent: 'ث',
-      latinScript: "tsa",
-      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+      arabicContent: 'ق',
+      latinScript: "q",
+      audioSrc: '/assets/audiohijaiyah/q.mp3'
     },
-
+    {
+      number: 22,
+      arabicContent: 'ك',
+      latinScript: "k",
+      audioSrc: '/assets/audiohijaiyah/k.mp3'
+    },
+    {
+      number: 23,
+      arabicContent: 'ل',
+      latinScript: "l",
+      audioSrc: '/assets/audiohijaiyah/l.mp3'
+    },
+    {
+      number: 24,
+      arabicContent: 'م',
+      latinScript: "m",
+      audioSrc: '/assets/audiohijaiyah/m.mp3'
+    },
+    {
+      number: 25,
+      arabicContent: 'ن',
+      latinScript: "n",
+      audioSrc: '/assets/audiohijaiyah/n.mp3'
+    },
+    {
+      number: 26,
+      arabicContent: 'ه',
+      latinScript: "h",
+      audioSrc: '/assets/audiohijaiyah/h.mp3'
+    },
+    {
+      number: 27,
+      arabicContent: 'و',
+      latinScript: "uu/w",
+      audioSrc: '/assets/audiohijaiyah/w.mp3'
+    },
+    {
+      number: 28,
+      arabicContent: 'ي',
+      latinScript: "ii/y",
+      audioSrc: '/assets/audiohijaiyah/y.mp3'
+    },
   ];
 
   return (
