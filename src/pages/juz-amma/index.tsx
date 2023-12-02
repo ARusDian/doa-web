@@ -8,10 +8,10 @@ export default function JuzAmma() {
     useEffect(() => {
         fetch('https://api.quran.com/api/v4/chapters?language=id')
             .then(response => response.json())
-            .then(data => setSurahDataState(data.chapters.slice(77,114)))
+            .then(data => setSurahDataState(data.chapters.slice(77, 114)))
     }
         , []);
-    
+
     console.log(surahDataState);
     return (
         <div className="bg-neutralWhite min-h-screen min-w-full">
@@ -43,15 +43,13 @@ export default function JuzAmma() {
                     className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mt-8"
                 >
                     {surahDataState.map((surah, i) => (
-                            <SurahCard
+                        <SurahCard
                             key={i}
-                                surah={surah}
-                                index={i + 1}
-                                onClick={() => {
-
-                                }}
-                            />
-                        ))}
+                            surah={surah}
+                            onClick={() => {
+                            }}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

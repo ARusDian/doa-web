@@ -1,13 +1,11 @@
 import { Surah } from "../models/surah";
 
 interface SurahCardProps {
-    index: number;
     onClick: () => void;
     surah: Surah;
 }
 
 export default function SurahCard({
-    index = 0,
     surah,
     onClick = () => { }
 }: SurahCardProps
@@ -29,7 +27,7 @@ export default function SurahCard({
             </div>
             <div className="flex justify-between w-full">
                 <div className="flex flex-col justify-center">
-                    <h1 className="text-lg font-semibold">{ surah.name_complex}</h1>
+                    <h1 className="text-lg font-semibold">{surah.name_complex}</h1>
                     <div className="flex gap-3 text-[#8789A3]">
                         <p className="text-xs">{surah.revelation_place.toUpperCase()}</p>
                         <p className="text-xs">{surah.verses_count} Verses</p>
