@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         'fontColor': '#8789A3',
+        'neutralSilver': '#F5F5F7FA',
+        'neutralDGrey': '#4D4D4D',
+        'brandPrimary': '#863ED5',
       },
       backgroundColor: {
         'neutralWhite': '#F5EFFB',
