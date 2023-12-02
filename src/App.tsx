@@ -1,17 +1,24 @@
 
 import './App.css'
-import Navbar from './components/Navbar'
 import Home from './pages/Home'
-import Service from './components/Service'
-import About from './components/About'
-import Footer from './components/Footer'
 import JuzAmma from './pages/juz-amma'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const BrowserRouter = createBrowserRouter(
+  [
+    { path: "/", element: <Home /> },
+    { path: "/juz-amma", element: <JuzAmma /> },
+  ],
+);
 
 function App() {
 
   return (
     <>
-      <Home />
+      <RouterProvider router={BrowserRouter} />
     </>
   )
 }
