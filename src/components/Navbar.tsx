@@ -3,6 +3,7 @@ import {Link} from 'react-scroll';
 
 //react icons
 import { FaXmark, FaBars} from 'react-icons/fa6';
+import { FaSearch } from 'react-icons/fa';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,7 +33,7 @@ function Navbar() {
   const navItems = [
     {link: 'Home', path:"home"},
     {link: 'About', path:"about"},
-    {link: 'Alquran', path:"alquran"},
+    {link: "Al-Qur'an", path:"alquran"},
     {link: 'Doa', path:"doa"},
 
   ];
@@ -42,7 +43,7 @@ function Navbar() {
         <nav className={`py-4 lg:px-14 px-4 ${isSticky ? "sticky top-0 left-0 right-0 border-b bg-white duration-300" : " " } `}>
           <div className='flex justify-between items-center text-base gap-8 mx-20'>
             <a ><span className='text-2xl font-bold  text-brandPrimary'>DOA & JUZ AMMA</span></a>
-
+            
             {/* nav web */}
             <ul className='md:flex space-x-12 hidden'>
               {
