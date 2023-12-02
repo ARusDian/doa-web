@@ -3,12 +3,14 @@ import { Ayat, SurahAyah } from "../../models/ayah";
 import AyahCard from "../../components/juz-amma/AyahCard";
 import AppLayout from "../../layouts/AppLayout";
 import { useParams } from "react-router-dom";
+import SkeletonAyahCard from "../../components/juz-amma/SkeletonAyahCard";
+import Skeleton from "react-loading-skeleton";
 
 
 export default function JuzAmma() {
     const [SuratAyat, setSuratAyat] = useState<SurahAyah>();
 
-    const params = useParams<{id : string}>();
+    const params = useParams<{ id: string }>();
 
     useEffect(() => {
         console.log(params)
@@ -29,15 +31,15 @@ export default function JuzAmma() {
                     <div className="flex flex-col gap-5 text-[#863ED5] text-center">
                         <div className="flex flex-col gap-1">
                             <p className="text-2xl">
-                                {SuratAyat?.namaLatin} ({SuratAyat?.nama})
+                                {SuratAyat ? `${SuratAyat?.namaLatin } (${SuratAyat?.nama})` : <Skeleton width={200} />}
                             </p>
                             <p className="text-lg">
-                                {SuratAyat?.arti}
+                                {SuratAyat?.arti || <Skeleton width={100} />}
                             </p>
                         </div>
                         <div>
                             <p className="text-lg">
-                                {SuratAyat?.jumlahAyat} Ayat
+                                {SuratAyat?.jumlahAyat || <Skeleton width={100} />} Ayat
                             </p>
                         </div>
                         <div className="flex justify-center">
@@ -57,6 +59,9 @@ export default function JuzAmma() {
                         <div className="max-w-7xl w-full">
                             {SuratAyat?.ayat.map((ayat, index) => (
                                 <AyahCard key={index} ayat={ayat} />
+                            )) || [...Array(10)].map((_, index) => (
+                                <SkeletonAyahCard key={index}
+                                />
                             ))}
                         </div>
                     </div>
