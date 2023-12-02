@@ -1,14 +1,16 @@
 
 import './App.css'
 import Navbar from './components/Navbar'
-import Home from './components/Home'
+// import Home from './components/Home'
+import JuzAmma from './pages/juz-amma'
 
 function App() {
 
   return (
     <>
       <Navbar/>
-      <Home/>
+      <JuzAmma/>
+      {/* <Home/> */}
     </>
   )
 }
