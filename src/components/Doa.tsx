@@ -27,7 +27,7 @@ const DoaTitle: FC<DoaTitleProps> = ({ doaNumber, doaTitle, arabicContent, trans
       {showContent && (
         <div className="p-2 mt-2 bg-gray-200 rounded-xl">
           <p className="text-right font-bold text-4xl">{arabicContent}</p>
-          <p className="mt-2">{latinScript}</p>
+          <p className="mt-5">{latinScript}</p>
           <p className="mt-2">{translation}</p>
           {audioSrc && (
             <audio controls className="mt-2">

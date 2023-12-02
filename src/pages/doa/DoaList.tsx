@@ -1,5 +1,5 @@
 import React from 'react';
-import DoaTitle from './Doa';
+import DoaTitle from '../../components/Doa';
 import AppLayout from "../../layouts/AppLayout";
 
 const DoaList = () => {
@@ -89,6 +89,7 @@ const DoaList = () => {
   return (
     <div>
       <AppLayout>
+      <p className="mx-auto items-center text-5xl text-white font-bold flex justify-center mb-8 pt-2 pb-4 bg-brandPrimary">Doa Sehari-hari</p>
       {doas.map(({ number, title, arabicContent, translation, latinScript, audioSrc }) => (
         <DoaTitle
               key={number}
@@ -99,6 +100,7 @@ const DoaList = () => {
               translation={translation}
               audioSrc={audioSrc}/>
       ))}
+      <p className="mt-12"></p>
       </AppLayout>
     </div>
   );
