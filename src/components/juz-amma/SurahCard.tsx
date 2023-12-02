@@ -1,19 +1,17 @@
-import { Surah } from "../models/surah";
+import { Surah } from "../../models/surah";
 
 interface SurahCardProps {
-    index: number;
     onClick: () => void;
     surah: Surah;
 }
 
 export default function SurahCard({
-    index = 0,
     surah,
     onClick = () => { }
 }: SurahCardProps
 ) {
     return (
-        <div onClick={onClick} className="flex gap-4 bg-stone-200 rounded-lg shadow-md p-2">
+        <div onClick={onClick} className="flex gap-4 bg-stone-200 rounded-lg shadow-xl p-2 hover:shadow-sm opacity-90">
             <div className="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                     <g clip-path="url(#clip0_141_977)">
@@ -29,7 +27,7 @@ export default function SurahCard({
             </div>
             <div className="flex justify-between w-full">
                 <div className="flex flex-col justify-center">
-                    <h1 className="text-lg font-semibold">{ surah.name_complex}</h1>
+                    <h1 className="text-lg font-semibold">{surah.name_complex}</h1>
                     <div className="flex gap-3 text-[#8789A3]">
                         <p className="text-xs">{surah.revelation_place.toUpperCase()}</p>
                         <p className="text-xs">{surah.verses_count} Verses</p>

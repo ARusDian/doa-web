@@ -13,3 +13,4 @@ export interface Surah {
         name: string;
     };
 }
+

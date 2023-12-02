@@ -30,10 +30,9 @@ function Navbar() {
 
   //nav items array
   const navItems = [
-    {link: 'Home', path:"home"},
-    {link: 'About', path:"about"},
-    {link: 'Alquran', path:"alquran"},
-    {link: 'Doa', path:"doa"},
+    {link: 'Home', path:"/"},
+    {link: 'Juz-Amma', path:"/juz-amma"},
+    {link: 'Doa', path:"/doa"},
 
   ];
   return (
@@ -46,7 +45,7 @@ function Navbar() {
             {/* nav web */}
             <ul className='md:flex space-x-12 hidden'>
               {
-                navItems.map(({link, path}) => <Link to={path} spy={true} smooth={true} offset={-100} key={path} className='block text-base text-grey900 hover:text-brandPrimary first:font-medium' > {link} </Link>)
+              navItems.map(({ link, path }) => <a href={path} key={path} className='block text-base text-grey900 hover:text-brandPrimary first:font-medium' > {link} </a>)
               }
             </ul>
 
@@ -63,7 +62,7 @@ function Navbar() {
           {/* nav items for mobile devices */}
           <div className={`space-y-4 px-4 mt-16 py-7 bg-brandPrimary ${isMenuOpen ? "blocked absolute z-20 top-0 right-0 left-0 " : "hidden"} `}>
               {
-                navItems.map(({link, path}) => <Link to={path} spy={true} smooth={true} offset={-100} key={path} className='block text-base text-white hover:text-brandPrimary first:font-medium' > {link} </Link>)
+                navItems.map(({link, path}) => <a href={path} key={path} className='block text-base text-white hover:text-brandPrimary first:font-medium' > {link} </a>)
               }
           </div>
 

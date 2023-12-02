@@ -1,22 +1,24 @@
+import Home from './pages/Home';
+import JuzAmma from './pages/juz-amma';
+import DetailSurah from './pages/juz-amma/detail';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
-import './App.css'
-import Navbar from './components/Navbar'
-import Home from './components/Home'
-import Service from './components/Service'
-import About from './components/About'
-import Footer from './components/Footer'
-import JuzAmma from './pages/juz-amma'
+const BrowserRouter = createBrowserRouter(
+  [
+    { path: "/", element: <Home /> },
+    { path: "/juz-amma", element: <JuzAmma /> },
+    { path: "/juz-amma/:id", element: <DetailSurah /> },
+  ],
+);
 
 function App() {
 
   return (
     <>
-      <Navbar/>
-      <Home/>
-      <Service/>
-      <About/>
-      <Footer/>
-      {/* <JuzAmma/> */}
+      <RouterProvider router={BrowserRouter} />
     </>
   )
 }
