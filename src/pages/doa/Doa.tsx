@@ -32,7 +32,7 @@ const DoaTitle: FC<DoaTitleProps> = ({ doaNumber, doaTitle, arabicContent, trans
           {audioSrc && (
             <audio controls className="mt-2">
               <source src={audioSrc} type="audio/mpeg" />
-              Your browser does not support the audio element.
+              Your browser does not support the audio element
             </audio>
           )}
         </div>
