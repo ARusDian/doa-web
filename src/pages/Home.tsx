@@ -1,6 +1,6 @@
 import { Navbar, Footer, Carousel } from "flowbite-react";
 import AppLayout from "../layouts/AppLayout";
-import Banner1 from "../assets/Banner1.png"
+import Banner1 from "../../public/assets/Banner1.png"
 
 export default function Home() {
     return (
