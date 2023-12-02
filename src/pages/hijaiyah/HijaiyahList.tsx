@@ -17,18 +17,24 @@ const HijaiyahList = () => {
       arabicContent: 'ب',
       latinScript: "ba",
       audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
+    },
+    {
+      number: 3,
+      title: 'Ta',
+      arabicContent: 'ت',
+      latinScript: "ta",
+      audioSrc: '/assets/audiodoa/doa_sebelum_makan.mp3'
     }
   ];
 
   return (
     <AppLayout>
-      {doas.map(({ number, arabicContent, translation, latinScript, audioSrc }) => (
+      {doas.map(({ number, arabicContent, latinScript, audioSrc }) => (
         <Hijaiyah
           key={number}
           HijaiyahNumber={number}
           arabicContent={arabicContent}
           latinScript={latinScript}
-          translation={translation}
           audioSrc={audioSrc}
         />
       ))}
