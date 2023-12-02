@@ -1,4 +1,4 @@
-import { Surah } from "../models/surah";
+import { Surah } from "../../models/surah";
 
 interface SurahCardProps {
     onClick: () => void;
@@ -11,7 +11,7 @@ export default function SurahCard({
 }: SurahCardProps
 ) {
     return (
-        <div onClick={onClick} className="flex gap-4 bg-stone-200 rounded-lg shadow-md p-2">
+        <div onClick={onClick} className="flex gap-4 bg-stone-200 rounded-lg shadow-xl p-2 hover:shadow-sm opacity-90">
             <div className="">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
                     <g clip-path="url(#clip0_141_977)">
