@@ -14,7 +14,7 @@ const BrowserRouter = createBrowserRouter(
     { path: "/doa", element: <DoaList /> },
     { path: "/juz-amma", element: <JuzAmma /> },
     { path: "/juz-amma/:id", element: <DetailSurah /> },
-    { path: "/hijaiyah/:id", element: <HijaiyahList /> }
+    { path: "/hijaiyah", element: <HijaiyahList /> }
   ],
 );
 
