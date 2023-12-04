@@ -1,5 +1,5 @@
 import React from 'react';
-import Hijaiyah from './Hijaiyah';
+import HijaiyahTitle from '../../components/Hijaiyah';
 import AppLayout from '../../layouts/AppLayout';
 
 const HijaiyahList = () => {
@@ -177,7 +177,7 @@ const HijaiyahList = () => {
   return (
     <AppLayout>
       {doas.map(({ number, arabicContent, latinScript, audioSrc }) => (
-        <Hijaiyah
+        <HijaiyahTitle
           key={number}
           HijaiyahNumber={number}
           arabicContent={arabicContent}

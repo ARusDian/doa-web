@@ -33,6 +33,7 @@ function Navbar() {
     {link: 'Home', path:"/"},
     {link: 'Juz-Amma', path:"/juz-amma"},
     {link: 'Doa', path:"/doa"},
+    {link: 'Hijaiyah', path:"/hijaiyah"}
 
   ];
   return (

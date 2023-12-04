@@ -1,6 +1,7 @@
 import Home from './pages/Home';
 import JuzAmma from './pages/juz-amma';
 import DetailSurah from './pages/juz-amma/detail';
+import HijaiyahList from './pages/hijaiyah/HijaiyahList';
 import {
   createBrowserRouter,
   RouterProvider,
