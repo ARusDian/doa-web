@@ -12,6 +12,7 @@ const BrowserRouter = createBrowserRouter(
     { path: "/", element: <Home /> },
     { path: "/juz-amma", element: <JuzAmma /> },
     { path: "/juz-amma/:id", element: <DetailSurah /> },
+    { path: "/hijaiyah/:id", element: <HijaiyahList /> }
   ],
 );
 
