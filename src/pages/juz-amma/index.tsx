@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SurahCard from "../../components/juz-amma/SurahCard";
 import { Surah } from "../../models/surah";
 import AppLayout from "../../layouts/AppLayout";
+import SkeletonSurahCard from "../../components/juz-amma/SkeletonSurahCard";
 
 export default function JuzAmma() {
     const [surahDataState, setSurahDataState] = useState<Surah[]>([]);
@@ -43,14 +44,21 @@ export default function JuzAmma() {
                     <div
                         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 gap-4 mt-8"
                     >
-                        {surahDataState.map((surah, i) => (
-                            <SurahCard
-                                key={i}
-                                surah={surah}
-                                onClick={() => {
-                                }}
-                            />
-                        ))}
+                        {surahDataState.length > 0 ?
+                            surahDataState.map((surah, i) => (
+                                <SurahCard
+                                    key={i}
+                                    surah={surah}
+                                    onClick={() => {
+                                    }}
+                                />
+                            )) : (
+                                Array(16).fill(0).map((_, i) => (
+                                    <SkeletonSurahCard key={i} />
+                                ))
+                                
+                            )
+                        }
                     </div>
                 </div>
             </div>

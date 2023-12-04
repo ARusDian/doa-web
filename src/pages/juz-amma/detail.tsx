@@ -1,35 +1,24 @@
 import { useEffect, useState } from "react";
-import SurahCard from "../../components/juz-amma/SurahCard";
-import { Surah } from "../../models/surah";
 import { Ayat, SurahAyah } from "../../models/ayah";
 import AyahCard from "../../components/juz-amma/AyahCard";
 import AppLayout from "../../layouts/AppLayout";
-
-const SURAH = {
-    id: 1,
-    revelation_place: "makkah",
-    revelation_order: 5,
-    bismillah_pre: true,
-    name_simple: "Al-Fatihah",
-    name_complex: "Al-Fātiĥah",
-    name_arabic: "الفاتحة",
-    verses_count: 7,
-    pages: [1],
-    translated_name: {
-        language_name: "english",
-        name: "The Opening",
-    },
-}
+import { useParams } from "react-router-dom";
+import SkeletonAyahCard from "../../components/juz-amma/SkeletonAyahCard";
+import Skeleton from "react-loading-skeleton";
 
 
 export default function JuzAmma() {
-    const [ayah, setAyah] = useState<Ayat[]>([]);
+    const [SuratAyat, setSuratAyat] = useState<SurahAyah>();
+
+    const params = useParams<{ id: string }>();
 
     useEffect(() => {
-        fetch('https://equran.id/api/v2/surat/114')
+        console.log(params)
+        fetch(`https://equran.id/api/v2/surat/${params.id}`)
             .then(response => response.json())
             .then(data => {
-                setAyah(data.data.ayat)
+                console.log(data)
+                setSuratAyat(data.data)
             })
     }, [])
 
@@ -42,15 +31,15 @@ export default function JuzAmma() {
                     <div className="flex flex-col gap-5 text-[#863ED5] text-center">
                         <div className="flex flex-col gap-1">
                             <p className="text-2xl">
-                                {SURAH.name_complex} ({SURAH.name_arabic})
+                                {SuratAyat ? `${SuratAyat?.namaLatin } (${SuratAyat?.nama})` : <Skeleton width={200} />}
                             </p>
                             <p className="text-lg">
-                                {SURAH.translated_name.name}
+                                {SuratAyat?.arti || <Skeleton width={100} />}
                             </p>
                         </div>
                         <div>
-                            <p className="text-md">
-                                {SURAH.verses_count} Verses
+                            <p className="text-lg">
+                                {SuratAyat?.jumlahAyat || <Skeleton width={100} />} Ayat
                             </p>
                         </div>
                         <div className="flex justify-center">
@@ -68,8 +57,11 @@ export default function JuzAmma() {
                     </div>
                     <div className="flex justify-center">
                         <div className="max-w-7xl w-full">
-                            {ayah.map((ayat, index) => (
+                            {SuratAyat?.ayat.map((ayat, index) => (
                                 <AyahCard key={index} ayat={ayat} />
+                            )) || [...Array(10)].map((_, index) => (
+                                <SkeletonAyahCard key={index}
+                                />
                             ))}
                         </div>
                     </div>
