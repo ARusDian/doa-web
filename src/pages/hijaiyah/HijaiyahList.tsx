@@ -7,7 +7,7 @@ const HijaiyahList = () => {
         {
           number: 1,
           arabicContent: 'ا',
-          latinScript: "aa",
+          latinScript: "alif",
           audioSrc: '/assets/audiohijaiyah/aa.mp3'
         },
         {
@@ -158,7 +158,7 @@ const HijaiyahList = () => {
           number: 26,
           arabicContent: 'ه',
           latinScript: "h",
-          audioSrc: '/assets/audiohijaiyah/h.mp3'
+          audioSrc: '/assets/audiohijaiyah/hh.mp3'
         },
         {
           number: 27,
