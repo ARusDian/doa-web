@@ -1,4 +1,3 @@
-import React from 'react';
 import HijaiyahTitle from '../../components/hijaiyah/Hijaiyah';
 import AppLayout from '../../layouts/AppLayout';
 

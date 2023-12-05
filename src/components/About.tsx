@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import aboutimg from '../assets/About.png'
 
 export class About extends Component {

@@ -1,7 +1,3 @@
-import React from 'react'
-
-
-
 function Service() {
   const services = [
       {id:1, title: 'Al-Quran', desription:'Al-Quran diturunkan untuk menjadi pegangan bagi mereka yang ingin mencapai kebahagian dunia dan akhirat', 
