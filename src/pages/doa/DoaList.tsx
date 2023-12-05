@@ -1,5 +1,5 @@
 import React from 'react';
-import DoaTitle from '../../components/Doa';
+import DoaTitle from '../../components/doa/Doa';
 import AppLayout from "../../layouts/AppLayout";
 
 const DoaList = () => {
