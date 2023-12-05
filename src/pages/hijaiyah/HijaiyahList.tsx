@@ -86,13 +86,13 @@ const HijaiyahList = () => {
           number: 14,
           arabicContent: 'ص',
           latinScript: "S",
-          audioSrc: '/assets/audiohijaiyah/S.mp3'
+          audioSrc: '/assets/audiohijaiyah/ss.mp3'
         },
         {
           number: 15,
           arabicContent: 'ض',
           latinScript: "D",
-          audioSrc: '/assets/audiohijaiyah/D.mp3'
+          audioSrc: '/assets/audiohijaiyah/dd.mp3'
         },
         {
           number: 16,
@@ -104,7 +104,7 @@ const HijaiyahList = () => {
           number: 17,
           arabicContent: 'ظ',
           latinScript: "DH",
-          audioSrc: '/assets/audiohijaiyah/DH.mp3'
+          audioSrc: '/assets/audiohijaiyah/DHH.mp3'
         },
         {
           number: 18,
