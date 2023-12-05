@@ -38,16 +38,16 @@ function Footer() {
 
         <div className="flex bg-gray-800 items-center justify-center space-x-8 mt-9 p-5">
         <p className="">© {new Date().getFullYear()} Website DOA</p>
-          <a href="https://facebook.com/example" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
             <FaFacebook className="h-6 w-6" />
           </a>
-          <a href="https://instagram.com/example" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
+          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
             <FaInstagram className="h-6 w-6" />
           </a>
-          <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
             <FaTwitter className="h-6 w-6" />
           </a>
-          <a href="https://github.com/example" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
+          <a href="https://github.com/ARusDian/doa-web" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-500">
             <FaGithub className="h-6 w-6" />
           </a>
         </div>
