@@ -18,7 +18,7 @@ const HijaiyahTitle: FC<HijaiyahTitleProps> = ({ HijaiyahNumber, arabicContent, 
       >
 
         <div className="ml-2">
-          <p>{HijaiyahNumber}</p>
+          <p>{arabicContent}</p>
         </div>
       </div>
       {showContent && (
