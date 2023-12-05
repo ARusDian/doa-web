@@ -15,6 +15,7 @@ export default function JuzAmma() {
 
     const params = useParams<{ id: string }>();
 
+    /* eslint-disable */
     useEffect(() => {
         fetch(`https://equran.id/api/v2/surat/${params.id}`)
             .then(response => response.json())
@@ -28,6 +29,7 @@ export default function JuzAmma() {
                 setTafsir(data.chapter_info.text)
             });
     }, [])
+     
 
 
     return (

@@ -1,9 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {Link} from 'react-scroll';
+import {useEffect, useState} from 'react';
 
 //react icons
 import { FaXmark, FaBars} from 'react-icons/fa6';
-import { FaSearch } from 'react-icons/fa';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,6 +69,6 @@ function Navbar() {
         </nav>
     </header>
   );
-};
+}
 
 export default Navbar;

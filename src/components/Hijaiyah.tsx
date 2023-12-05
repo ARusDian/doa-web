@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 
 interface HijaiyahTitleProps {
   HijaiyahNumber: number;
@@ -7,7 +7,7 @@ interface HijaiyahTitleProps {
   audioSrc: string;
 }
 
-const HijaiyahTitle: FC<HijaiyahTitleProps> = ({ HijaiyahNumber, arabicContent, latinScript, audioSrc }) => {
+const HijaiyahTitle: FC<HijaiyahTitleProps> = ({ arabicContent, latinScript, audioSrc }) => {
   const [showContent, setShowContent] = useState(false);
 
   return (

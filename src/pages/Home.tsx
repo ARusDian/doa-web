@@ -1,4 +1,4 @@
-import { Navbar, Footer, Carousel } from "flowbite-react";
+import { Carousel } from "flowbite-react";
 import AppLayout from "../layouts/AppLayout";
 import Banner1 from "/assets/Banner1.png"
 
