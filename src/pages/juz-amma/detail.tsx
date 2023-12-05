@@ -1,37 +1,89 @@
 import { useEffect, useState } from "react";
-import { Ayat, SurahAyah } from "../../models/ayah";
+import { SurahAyah } from "../../models/ayah";
 import AyahCard from "../../components/juz-amma/AyahCard";
 import AppLayout from "../../layouts/AppLayout";
 import { useParams } from "react-router-dom";
 import SkeletonAyahCard from "../../components/juz-amma/SkeletonAyahCard";
 import Skeleton from "react-loading-skeleton";
-
+import parse from 'html-react-parser';
 
 export default function JuzAmma() {
     const [SuratAyat, setSuratAyat] = useState<SurahAyah>();
+    const [tafsir, setTafsir] = useState<string>()
+
+    const [tafsirHover, setTafsirHover] = useState<boolean>(false);
 
     const params = useParams<{ id: string }>();
 
     useEffect(() => {
-        console.log(params)
         fetch(`https://equran.id/api/v2/surat/${params.id}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
                 setSuratAyat(data.data)
-            })
+            });
+        fetch(`https://api.quran.com/api/v4/chapters/${params.id}/info?language=id`)
+            .then(response => response.json())
+            .then(data => {
+                setTafsir(data.chapter_info.text)
+            });
     }, [])
 
 
     return (
         <AppLayout>
             <div className="bg-neutralWhite min-h-screen min-w-full">
+                {/* Modal for tafsir */}
+                {(tafsirHover && tafsir) && <div className="absolute bg-white rounded-lg shadow-lg p-5 w-1/2 left-1/4 top-1/4 z-10">
+                    <div
+                        onClick={() => setTafsirHover(!tafsirHover)}
+                        contentEditable={false}
+                        className="flex justify-end text-red-600 text-2xl cursor-default my-auto"><p className=" hover:bg-slate-100 rounded-xl p-1 align-middle items-center">
+                            <svg viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6.96967 16.4697C6.67678 16.7626 6.67678 17.2374 6.96967 17.5303C7.26256 17.8232 7.73744 17.8232 8.03033 17.5303L6.96967 16.4697ZM13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697L13.0303 12.5303ZM11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303L11.9697 11.4697ZM18.0303 7.53033C18.3232 7.23744 18.3232 6.76256 18.0303 6.46967C17.7374 6.17678 17.2626 6.17678 16.9697 6.46967L18.0303 7.53033ZM13.0303 11.4697C12.7374 11.1768 12.2626 11.1768 11.9697 11.4697C11.6768 11.7626 11.6768 12.2374 11.9697 12.5303L13.0303 11.4697ZM16.9697 17.5303C17.2626 17.8232 17.7374 17.8232 18.0303 17.5303C18.3232 17.2374 18.3232 16.7626 18.0303 16.4697L16.9697 17.5303ZM11.9697 12.5303C12.2626 12.8232 12.7374 12.8232 13.0303 12.5303C13.3232 12.2374 13.3232 11.7626 13.0303 11.4697L11.9697 12.5303ZM8.03033 6.46967C7.73744 6.17678 7.26256 6.17678 6.96967 6.46967C6.67678 6.76256 6.67678 7.23744 6.96967 7.53033L8.03033 6.46967ZM8.03033 17.5303L13.0303 12.5303L11.9697 11.4697L6.96967 16.4697L8.03033 17.5303ZM13.0303 12.5303L18.0303 7.53033L16.9697 6.46967L11.9697 11.4697L13.0303 12.5303ZM11.9697 12.5303L16.9697 17.5303L18.0303 16.4697L13.0303 11.4697L11.9697 12.5303ZM13.0303 11.4697L8.03033 6.46967L6.96967 7.53033L11.9697 12.5303L13.0303 11.4697Z" fill="#FF3333"></path> </g></svg>
+                        </p>
+                    </div>
+                    <p className="text-lg">
+                        <p className="flex justify-center gap-3 text-xl font-bold text-[#994EF8]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                                <g clip-path="url(#clip0_141_977)">
+                                    <path d="M31.0781 12.6219V5.97656C31.0781 5.39409 30.6059 4.92188 30.0234 4.92188H23.3781L18.7442 0.307336C18.3326 -0.102445 17.6673 -0.102445 17.2557 0.307336L12.6219 4.92188H5.97656C5.39409 4.92188 4.92188 5.39409 4.92188 5.97656V12.6219L0.307336 17.2558C-0.102445 17.6674 -0.102445 18.3327 0.307336 18.7443L4.92188 23.3781V30.0234C4.92188 30.6059 5.39409 31.0781 5.97656 31.0781H12.6219L17.2557 35.6927C17.4615 35.8976 17.7308 36 18 36C18.2692 36 18.5385 35.8976 18.7442 35.6927L23.3781 31.0781H30.0234C30.6059 31.0781 31.0781 30.6059 31.0781 30.0234V23.3781L35.6927 18.7443C36.1024 18.3327 36.1024 17.6674 35.6927 17.2558L31.0781 12.6219ZM29.2761 22.1983C29.0793 22.396 28.9688 22.6635 28.9688 22.9425V28.9688H22.9425C22.6636 28.9688 22.396 29.0793 22.1984 29.2761L18 33.4569L13.8017 29.2761C13.604 29.0793 13.3365 28.9688 13.0575 28.9688H7.03125V22.9425C7.03125 22.6636 6.92072 22.396 6.72391 22.1984L2.54313 18L6.72391 13.8017C6.92072 13.604 7.03125 13.3365 7.03125 13.0575V7.03125H13.0575C13.3364 7.03125 13.604 6.92072 13.8016 6.72391L18 2.54313L22.1984 6.72391C22.3961 6.92072 22.6636 7.03125 22.9425 7.03125H28.9688V13.0575C28.9688 13.3364 29.0793 13.604 29.2761 13.8016L33.4569 18L29.2761 22.1983Z" fill="#994EF8" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_141_977">
+                                        <rect width="36" height="36" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <p className="my-auto">
+                                Tafsir Surah
+                            </p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="#994EF8">
+                                <g clip-path="url(#clip0_141_977)">
+                                    <path d="M31.0781 12.6219V5.97656C31.0781 5.39409 30.6059 4.92188 30.0234 4.92188H23.3781L18.7442 0.307336C18.3326 -0.102445 17.6673 -0.102445 17.2557 0.307336L12.6219 4.92188H5.97656C5.39409 4.92188 4.92188 5.39409 4.92188 5.97656V12.6219L0.307336 17.2558C-0.102445 17.6674 -0.102445 18.3327 0.307336 18.7443L4.92188 23.3781V30.0234C4.92188 30.6059 5.39409 31.0781 5.97656 31.0781H12.6219L17.2557 35.6927C17.4615 35.8976 17.7308 36 18 36C18.2692 36 18.5385 35.8976 18.7442 35.6927L23.3781 31.0781H30.0234C30.6059 31.0781 31.0781 30.6059 31.0781 30.0234V23.3781L35.6927 18.7443C36.1024 18.3327 36.1024 17.6674 35.6927 17.2558L31.0781 12.6219ZM29.2761 22.1983C29.0793 22.396 28.9688 22.6635 28.9688 22.9425V28.9688H22.9425C22.6636 28.9688 22.396 29.0793 22.1984 29.2761L18 33.4569L13.8017 29.2761C13.604 29.0793 13.3365 28.9688 13.0575 28.9688H7.03125V22.9425C7.03125 22.6636 6.92072 22.396 6.72391 22.1984L2.54313 18L6.72391 13.8017C6.92072 13.604 7.03125 13.3365 7.03125 13.0575V7.03125H13.0575C13.3364 7.03125 13.604 6.92072 13.8016 6.72391L18 2.54313L22.1984 6.72391C22.3961 6.92072 22.6636 7.03125 22.9425 7.03125H28.9688V13.0575C28.9688 13.3364 29.0793 13.604 29.2761 13.8016L33.4569 18L29.2761 22.1983Z" fill="#994EF8" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_141_977">
+                                        <rect width="36" height="36" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </p>
+                        {parse(tafsir)}
+                    </p>
+                </div>}
                 <div className="p-24 flex flex-col gap-5">
                     <p className="items-center text-5xl font-bold flex justify-center">Surah</p>
                     <div className="flex flex-col gap-5 text-[#863ED5] text-center">
                         <div className="flex flex-col gap-1">
-                            <p className="text-2xl">
-                                {SuratAyat ? `${SuratAyat?.namaLatin } (${SuratAyat?.nama})` : <Skeleton width={200} />}
+                            <p className="text-2xl flex justify-center gap-3 "
+                                onClick={() => setTafsirHover(!tafsirHover)}
+                            >
+                                {SuratAyat ? <>
+                                    <p>{SuratAyat?.namaLatin} ({SuratAyat?.nama})</p>
+                                    <p className="my-auto">
+                                        <svg height="20" width="20" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 302.967 302.967" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <path fill="#010002" d="M151.483,302.967C67.956,302.967,0,235.017,0,151.483S67.956,0,151.483,0 s151.483,67.956,151.483,151.483S235.017,302.967,151.483,302.967z M151.483,24.416c-70.066,0-127.067,57.001-127.067,127.067 s57.001,127.067,127.067,127.067s127.067-57.001,127.067-127.067S221.555,24.416,151.483,24.416z"></path> </g> <g> <g> <path fill="#010002" d="M116.586,118.12c1.795-4.607,4.297-8.588,7.511-11.961c3.225-3.389,7.114-6.016,11.667-7.898 c4.547-1.904,9.633-2.845,15.262-2.845c7.261,0,13.32,0.995,18.183,2.997c4.857,1.996,8.768,4.482,11.738,7.441 c2.964,2.97,5.091,6.168,6.369,9.584c1.273,3.432,1.915,6.636,1.915,9.595c0,4.901-0.642,8.947-1.915,12.118 c-1.278,3.171-2.866,5.88-4.759,8.131c-1.898,2.252-3.987,4.172-6.293,5.755c-2.295,1.588-4.471,3.171-6.516,4.759 c-2.045,1.583-3.862,3.394-5.445,5.439c-1.588,2.04-2.589,4.601-2.991,7.664v5.831H140.6v-6.908 c0.305-4.395,1.153-8.072,2.529-11.036c1.382-2.964,2.991-5.499,4.83-7.598c1.844-2.089,3.786-3.911,5.836-5.445 c2.04-1.539,3.927-3.073,5.673-4.591c1.73-1.545,3.144-3.225,4.221-5.069c1.071-1.833,1.556-4.15,1.452-6.908 c0-4.705-1.148-8.18-3.454-10.427c-2.295-2.257-5.493-3.378-9.589-3.378c-2.758,0-5.134,0.533-7.131,1.605 s-3.628,2.513-4.911,4.302c-1.278,1.795-2.225,3.894-2.834,6.288c-0.615,2.415-0.919,4.982-0.919,7.756h-22.55 C113.85,127.785,114.791,122.732,116.586,118.12z M162.536,183.938v23.616h-24.09v-23.616H162.536z"></path> </g> </g> </g> </g> </g></svg>
+                                    </p>
+                                </> : <Skeleton width={200} />}
                             </p>
                             <p className="text-lg">
                                 {SuratAyat?.arti || <Skeleton width={100} />}
@@ -65,7 +117,7 @@ export default function JuzAmma() {
                             ))}
                         </div>
                     </div>
-                </div>
+                    d</div>
             </div>
         </AppLayout>
     )
